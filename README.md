@@ -55,3 +55,31 @@ Redirecionar botões da página principal para:
 visitante.html
 
 causa.html
+
+🎨 Layout e Estilização
+
+O projeto utiliza um estilo limpo, com:
+
+Imagens de fundo específicas para cada área (fornecidas no design)
+
+Blocos escuros com texto claro para formulários
+
+Interface ampla e responsiva
+
+Cores inspiradas em sustentabilidade (verde, branco, preto)
+
+🚀 Tecnologias Utilizadas
+
+HTML5
+
+CSS3
+
+JavaScript
+
+Armazenamento local com localStorage
+
+Design com imagens personalizadas
+
+📄 Licença
+
+Este projeto é de uso livre para fins educacionais.
