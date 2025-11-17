@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Causas | EcoRede</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="hero">
+      <img src="imagens/Design sem nome.png" alt="Fundo" class="comu">
+      <div class="fade"></div>
+    </div>
+
+    <div class="logo">
+      <img src="imagens/Ativo_3600x.png" alt="EcoRede Logo">
+    </div>
+
+    <nav class="menu">
+      <a href="ecorede.html">Início</a>
+      <a href="objetivos.html">Objetivos</a>
+      <a href="causas.html" class="ativo">Causas</a>
+    </nav>
+  </header>
+
+  <!-- Fundo de plantas -->
+  <div class="plantinhas">
+    <img src="imagens/plantas.png" alt="Plantas">
+    <div class="fade"></div>
+  </div>
+
+  <!-- Seção das Causas -->
+  <section class="sobre causas">
+    <div class="decoracao"></div>
+    <h2><span>&gt;&lt;</span> Causas</h2>
+
+    <div class="globos">
+      <img src="imagens/globo.png" alt="Globo">
+    </div>
+
+    <div class="lista-causas">
+      <!-- Card de exemplo -->
+      
+    </div>
+  </section>
+
+<section class="lista-causas" id="listaCausas"></section>
+
+<section class="lista-causas" id="listaCausas"></section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const lista = document.getElementById("listaCausas");
+    const causas = JSON.parse(localStorage.getItem("causas")) || [];
+
+    if (causas.length === 0) {
+      lista.innerHTML = "<p>Nenhuma causa cadastrada ainda.</p>";
+      return;
+    }
+
+    causas.forEach(causa => {
+      const card = document.createElement("div");
+      card.classList.add("causa-card");
+
+      card.innerHTML = `
+        <img src="${causa.imagem}" alt="${causa.nome}" class="imagem-causa">
+        <div class="conteudo-causa">
+          <h3>${causa.nome}</h3>
+          <p><strong>Representante:</strong> ${causa.representante}</p>
+          <p>${causa.sobre}</p>
+          ${causa.link ? `<a href="${causa.link}" target="_blank" class="botao-link">Acessar Página</a>` : ""}
+        </div>
+      `;
+
+      lista.appendChild(card);
+    });
+  });
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

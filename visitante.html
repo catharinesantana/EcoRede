@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Visitante | EcoRede</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="cadastro">
+
+  <div class="cadastro-container">
+    <img src="imagens/Design sem nome.png" alt="Fundo" class="bg-img">
+    <img src="imagens/Ativo_3600x.png" alt="" class="loga">
+    
+    <div class="cadastro-box">
+      <h2>CADASTRO:</h2>
+
+      <form id="formVisitante">
+        <label>Nome:</label>
+        <input type="text" id="nomeVisitante" placeholder="Seu nome" required>
+
+        <label>E-mail:</label>
+        <input type="email" id="emailVisitante" placeholder="email@exemplo.com" required>
+
+        <label>Mensagem ou Interesse:</label>
+        <textarea id="mensagemVisitante" placeholder="Por que quer participar?" required></textarea>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+    </div>
+  </div>
+
+  <script type="module">
+
+    document.getElementById("formVisitante").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nomeVisitante").value.trim();
+      const email = document.getElementById("emailVisitante").value.trim();
+      const mensagem = document.getElementById("mensagemVisitante").value.trim();
+
+      try {
+        await addDoc(collection(db, "visitantes"), {
+          nome,
+          email,
+          mensagem,
+          criadoEm: serverTimestamp()
+        });
+
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = "ecorede.html"; // volta pro início
+      } catch (err) {
+        console.error(err);
+        alert("Erro ao cadastrar visitante. Veja o console.");
+      }
+    });
+  </script>
+
+  
+
+
+</body>
+</html>

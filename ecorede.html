@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRede | Sua Rede, Nossa Causa</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+
+    
+
+    <div class="hero">
+        <img src="imagens/Design sem nome.png" alt="Fundo" class="comu">
+        <div class="fade"></div>
+    </div>
+
+    <div class="logo">
+      <img src="imagens/Ativo_3600x.png" alt="EcoRede Logo">
+    </div>
+    <nav class="menu">
+      <a href="ecorede.html">Início</a>
+      <a href="objetivos.html">Objetivos</a>
+      <a href="causas.html">Causas</a>
+    </nav>
+  </header>
+
+  <div class="plantinhas">
+      <img src="imagens/plantas.png" alt="Plantas">
+      <div class="fade"></div>
+    </div>
+
+  <!-- Seção Sobre Nós -->
+  <section class="sobre">
+    <div class="decoracao"></div>
+    <h2><span>&gt;&lt;</span> Sobre nós</h2>
+
+    <div class="globos">
+      <img src="imagens/globo.png" alt="Globo">
+    </div>
+
+    <div class="conteudo">
+        <p>A EcoRede é uma plataforma digital idealizada em 2020 com um propósito claro: fortalecer e dar visibilidade a causas sociais, ONGs e iniciativas que trabalham diariamente por um mundo melhor. Depois de anos de planejamento, pesquisa e dedicação, a ideia finalmente saiu do papel — e hoje se transforma em uma rede online de conexão, solidariedade e impacto real.
+        Com uma proposta inovadora, a EcoRede surge para unir pessoas dispostas a ajudar com projetos que realmente precisam de apoio, criando um espaço acessível, transparente e colaborativo para transformar boas intenções em ações concretas. Na EcoRede, acreditamos que a transformação social começa quando pessoas e organizações se unem em torno de causas que realmente importam. Com o objetivo de promover um impacto positivo, nossa plataforma online foi criada para facilitar a interação entre aqueles que querem ajudar e as ONGs e causas sociais que mais precisam de apoio.
+        Nosso site foi pensado para ser um ponto de encontro virtual, onde qualquer pessoa, independente de sua localização ou disponibilidade, pode contribuir de maneira prática e eficaz para projetos e iniciativas de impacto social.
+        </p>
+
+        <h3>Para os Visitantes:</h3>
+        <p>Se você é alguém que acredita no poder da solidariedade e quer fazer a diferença, a EcoRede oferece um espaço simples e seguro para você se envolver. Ao acessar a plataforma, você pode explorar uma vasta gama de causas cadastradas, fazer doações financeiras, compartilhar as iniciativas com seus amigos e familiares, e até se inscrever como voluntário para ajudar diretamente nas ações dessas causas.</p>
+
+        <h3>Para as Causas e ONGs:</h3>
+        <p>Se você lidera uma organização social ou tem uma causa que deseja expandir seu alcance, a EcoRede é o parceiro ideal para ampliar sua visibilidade e engajamento. Ao se cadastrar, você terá acesso a um painel completo de ferramentas para compartilhar sua missão com o mundo. Além disso, poderá adicionar imagens à sua galeria, criar apresentações envolventes para atrair mais apoio, e fornecer informações claras sobre como as pessoas podem colaborar. Nossa plataforma também facilita a gestão de doações e inscrições de voluntários, proporcionando mais organização e transparência para todos os envolvidos.</p>
+
+        <h3>Por que escolher a EcoRede?</h3>
+        <p>Somos uma empresa comprometida com a criação de uma rede sólida e colaborativa que conecte pessoas, empresas e organizações para promover uma sociedade mais justa e igualitária. Ao escolher a EcoRede, você está fazendo parte de uma comunidade que acredita no poder da união para gerar mudanças reais.
+        Acreditamos que cada contribuição conta, seja ela em tempo, dinheiro ou apoio. Nossa missão é criar uma plataforma onde o engajamento social seja acessível, transparente e efetivo, para que todos possam fazer a diferença no mundo de maneira prática e impactante.
+        </p>
+
+        <p class="jun">Junte-se à EcoRede. Seja a mudança que você quer ver no mundo.</p>
+    </div>
+  </section>
+
+  <!-- Seção Junte-se a Nós -->
+  <section class="junte-se" id="junte">
+    <h2><span>&gt;&lt;</span> Junte-se a nós</h2>
+    <div class="botoes">
+      <button class="causa" onclick="window.location.href='cadastroCausa.html'">Causa Social</button>
+      <button class="visitante" onclick="window.location.href='cadastroVisitante.html'">Visitante</button>
+    </div>
+  </section>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const junteSe = document.getElementById("junte-se");
+      const usuarioCadastrado = localStorage.getItem("usuarioCadastrado");
+
+      // Se já estiver cadastrado, some com a seção
+      if (usuarioCadastrado === "true") {
+        junteSe.style.display = "none";
+      }
+    });
+  </script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCsG5VpFvaCaI33FD-ag-Tp4oGryOUpb8",
+      authDomain: "ecorede-ec175.firebaseapp.com",
+      projectId: "ecorede-ec175",
+      storageBucket: "ecorede-ec175.firebasestorage.app",
+      messagingSenderId: "456045884447",
+      appId: "1:456045884447:web:7b19621d24fa8c7142512a",
+      measurementId: "G-G43Y7ZXRY8"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
